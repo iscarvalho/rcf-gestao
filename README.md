@@ -6,6 +6,25 @@ principles are in [PRODUCT.md](PRODUCT.md) and [DESIGN.md](DESIGN.md).
 
 The app UI is in Brazilian Portuguese; screen names below are given as they appear in the app.
 
+## Live demo
+
+**https://rcf-gestao.vercel.app** — click **"Entrar como demonstração"** on the login screen.
+(Or sign in with `demo@rcfgestao.example` / `demo-rcf-2026`.)
+
+Everything in the demo is fictional: venues, people, events, sales and revenue splits are generated
+by [`scripts/gerar-demo.mjs`](scripts/gerar-demo.mjs). The production system runs on a separate,
+private database with the company's real Banlek data, which is not part of this repository.
+
+A 1-minute walkthrough recorded on the demo is in [`docs/demo.webm`](docs/demo.webm).
+
+| Dashboard | Event with revenue split |
+| --- | --- |
+| ![Dashboard](docs/screenshots/painel.png) | ![Event page](docs/screenshots/evento.png) |
+
+| Events | Login | Mobile | Mobile menu |
+| --- | --- | --- | --- |
+| ![Events](docs/screenshots/eventos.png) | ![Login](docs/screenshots/login.png) | ![Mobile dashboard](docs/screenshots/mobile-painel.png) | ![Mobile menu](docs/screenshots/mobile-menu.png) |
+
 ## Features
 
 ### Records
@@ -88,6 +107,10 @@ and revenue as sales. The event key is the Banlek id (`banlek_id`), so running i
 duplicates anything, and only the difference to what is already recorded is added to revenue
 (including what was entered on the Vendas screen). Events with a future date are created as scheduled.
 
+Name mappings (venues and team members) live in `supabase/carga/mapeamento.json`;
+[`mapeamento.example.json`](supabase/carga/mapeamento.example.json) shows the format. The real
+files under `supabase/carga/` are not included in this public repository.
+
 Each event's revenue split (the "Colaboradores" tab: rates, administrator and photographers with what
 they sold) is in `supabase/carga/banlek-divisao.json`. Banlek revenue already excludes Banlek's own fee
 (9%); the script splits the rest between administrator, photographers and the company (which keeps the
@@ -102,10 +125,24 @@ supabase db query --linked -f /tmp/banlek.sql
 New venues must be added to `LOCAIS` (by title) or `LOCAIS_POR_ENDERECO` in the script; it stops with
 a message when it finds one it doesn't know.
 
+## Demo data
+
+`scripts/gerar-demo.mjs` generates the public demo: 12 venues, ~120 events over the last 8 months and
+the next 6 weeks, sales with a realistic post-event curve, revenue splits in the Banlek patterns, costs,
+expenses and the demo login. It is deterministic, dates are relative to the day it runs, and it refuses
+to run on a database that has events imported from Banlek.
+
+```bash
+node scripts/gerar-demo.mjs > /tmp/demo.sql
+supabase db query --linked -f /tmp/demo.sql   # on the demo project only
+```
+
+Setting `DEMO_EMAIL` and `DEMO_SENHA` on the deployment shows the "Entrar como demonstração" button,
+adds a "Demo" tag to the header and blocks name and password changes for the demo user.
+
 ## Mock data
 
-The database holds the real data imported above. The mock below is for demos only and must not be
-mixed with it.
+The older, smaller mock below is for quick local demos and must not be mixed with real data.
 
 `supabase/mock/carregar.sql` creates 10 venues, 10 people, 10 events (in every status), their costs
 and sales, and company expenses. `supabase/mock/limpar.sql` removes all of it.
