@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-22T00:00:00Z",
+  "title": "Design System: RCF Gestão",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "oklch(1 0 0)", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.27 0 0)", "oklch(0.44 0 0)", "oklch(0.56 0 0)", "oklch(0.71 0 0)", "oklch(0.87 0 0)", "oklch(0.97 0 0)", "oklch(1 0 0)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(0.145 0 0)", "tonalRamp": ["oklch(0.145 0 0)", "oklch(0.205 0 0)", "oklch(0.269 0 0)", "oklch(0.371 0 0)", "oklch(0.439 0 0)", "oklch(0.556 0 0)", "oklch(0.708 0 0)", "oklch(0.87 0 0)"] },
+      "ink-strong": { "role": "primary", "displayName": "Ledger Ink", "canonical": "oklch(0.205 0 0)", "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.205 0 0)", "oklch(0.3 0 0)", "oklch(0.42 0 0)", "oklch(0.55 0 0)", "oklch(0.7 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)"] },
+      "ink-on-dark": { "role": "neutral", "displayName": "Ink on Dark", "canonical": "oklch(0.985 0 0)" },
+      "wash": { "role": "neutral", "displayName": "Wash", "canonical": "oklch(0.97 0 0)" },
+      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "oklch(0.556 0 0)" },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "oklch(0.922 0 0)" },
+      "focus-ring": { "role": "neutral", "displayName": "Focus Ring", "canonical": "oklch(0.708 0 0)" },
+      "loss-red": { "role": "error", "displayName": "Loss Red", "canonical": "oklch(0.577 0.245 27.325)", "tonalRamp": ["oklch(0.25 0.09 27)", "oklch(0.35 0.14 27)", "oklch(0.45 0.19 27)", "oklch(0.577 0.245 27.325)", "oklch(0.68 0.19 25)", "oklch(0.78 0.12 24)", "oklch(0.88 0.06 22)", "oklch(0.96 0.02 20)"] },
+      "revenue-blue": { "role": "data", "displayName": "Revenue Blue", "canonical": "#2a78d6", "tonalRamp": ["oklch(0.25 0.07 255)", "oklch(0.35 0.11 255)", "oklch(0.45 0.14 255)", "oklch(0.58 0.16 255)", "oklch(0.68 0.13 255)", "oklch(0.78 0.09 255)", "oklch(0.88 0.05 255)", "oklch(0.96 0.02 255)"] },
+      "outflow-orange": { "role": "data", "displayName": "Outflow Orange", "canonical": "#eb6834", "tonalRamp": ["oklch(0.28 0.07 42)", "oklch(0.38 0.11 42)", "oklch(0.5 0.15 42)", "oklch(0.66 0.18 42)", "oklch(0.74 0.14 45)", "oklch(0.82 0.1 48)", "oklch(0.9 0.05 50)", "oklch(0.97 0.02 55)"] },
+      "negative-red": { "role": "data", "displayName": "Negative Red", "canonical": "#e34948" },
+      "night-paper": { "role": "neutral", "displayName": "Night Paper (dark)", "canonical": "oklch(0.145 0 0)" },
+      "night-surface": { "role": "neutral", "displayName": "Night Surface (dark)", "canonical": "oklch(0.205 0 0)" },
+      "night-wash": { "role": "neutral", "displayName": "Night Wash (dark)", "canonical": "oklch(0.269 0 0)" },
+      "night-graphite": { "role": "neutral", "displayName": "Night Graphite (dark)", "canonical": "oklch(0.708 0 0)" },
+      "night-loss-red": { "role": "error", "displayName": "Night Loss Red (dark)", "canonical": "oklch(0.704 0.191 22.216)" }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "Page title in CabecalhoPagina; one per page." },
+      "figure": { "displayName": "Figure", "purpose": "Indicator values; 1.125rem on mobile, 1.5rem from sm; always tabular numerals." },
+      "title": { "displayName": "Title", "purpose": "Section headings (Secao)." },
+      "body": { "displayName": "Body", "purpose": "Default text for tables, lists, nav, buttons and descriptions." },
+      "label": { "displayName": "Label", "purpose": "Badges, footnotes and metadata lines." },
+      "mono": { "displayName": "Mono", "purpose": "Loaded; reserved for codes and identifiers." }
+    },
+    "shadows": [
+      { "name": "float", "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)", "purpose": "Floating layers only: chart tooltip and popovers (shadow-md). Never on resting containers." }
+    ],
+    "motion": [
+      { "name": "state-transition", "value": "150ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Tailwind default for color and fill changes on hover/focus." },
+      { "name": "press", "value": "translateY(1px)", "purpose": "Buttons nudge down 1px on press." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ledger Ink fill; the main commit action, e.g. Salvar.",
+      "html": "<button class=\"ds-btn-primary\">Salvar</button>",
+      "css": ".ds-btn-primary { font: 500 14px/1 Geist, ui-sans-serif, system-ui, sans-serif; height: 32px; padding: 0 10px; border: 1px solid transparent; border-radius: 10px; background: oklch(0.205 0 0); color: oklch(0.985 0 0); cursor: pointer; transition: background 150ms cubic-bezier(0.4,0,0.2,1), transform 150ms; } .ds-btn-primary:hover { background: oklch(0.205 0 0 / 0.8); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px oklch(0.708 0 0 / 0.5); } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Hairline-bordered secondary action.",
+      "html": "<button class=\"ds-btn-outline\">Novo evento</button>",
+      "css": ".ds-btn-outline { font: 500 14px/1 Geist, ui-sans-serif, system-ui, sans-serif; height: 32px; padding: 0 10px; border: 1px solid oklch(0.922 0 0); border-radius: 10px; background: oklch(1 0 0); color: oklch(0.145 0 0); cursor: pointer; transition: background 150ms; } .ds-btn-outline:hover { background: oklch(0.97 0 0); } .ds-btn-outline:focus-visible { outline: none; border-color: oklch(0.708 0 0); box-shadow: 0 0 0 3px oklch(0.708 0 0 / 0.5); } .ds-btn-outline:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Destructive Button",
+      "kind": "button",
+      "refersTo": "button-destructive",
+      "description": "Red text on a 10% red tint; removing a sale or cost entry.",
+      "html": "<button class=\"ds-btn-destructive\">Remover</button>",
+      "css": ".ds-btn-destructive { font: 500 14px/1 Geist, ui-sans-serif, system-ui, sans-serif; height: 32px; padding: 0 10px; border: 1px solid transparent; border-radius: 10px; background: oklch(0.577 0.245 27.325 / 0.1); color: oklch(0.577 0.245 27.325); cursor: pointer; transition: background 150ms; } .ds-btn-destructive:hover { background: oklch(0.577 0.245 27.325 / 0.2); } .ds-btn-destructive:focus-visible { outline: none; box-shadow: 0 0 0 3px oklch(0.577 0.245 27.325 / 0.2); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Hairline stroke, 10px radius; money fields accept 1.234,56.",
+      "html": "<input class=\"ds-input\" placeholder=\"0,00\" inputmode=\"decimal\" />",
+      "css": ".ds-input { font: 400 14px/1.4 Geist, ui-sans-serif, system-ui, sans-serif; height: 32px; width: 220px; padding: 4px 10px; border: 1px solid oklch(0.922 0 0); border-radius: 10px; background: transparent; color: oklch(0.145 0 0); transition: border-color 150ms, box-shadow 150ms; } .ds-input::placeholder { color: oklch(0.556 0 0); } .ds-input:focus-visible { outline: none; border-color: oklch(0.708 0 0); box-shadow: 0 0 0 3px oklch(0.708 0 0 / 0.5); } .ds-input[aria-invalid=true] { border-color: oklch(0.577 0.245 27.325); box-shadow: 0 0 0 3px oklch(0.577 0.245 27.325 / 0.2); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Top bar links; active link gets a Wash pill.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-active\" aria-current=\"page\" href=\"#\">Painel</a><a class=\"ds-nav-link\" href=\"#\">Eventos</a><a class=\"ds-nav-link\" href=\"#\">Vendas</a><a class=\"ds-nav-link\" href=\"#\">Despesas</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; } .ds-nav-link { font: 400 14px/1.4 Geist, ui-sans-serif, system-ui, sans-serif; padding: 6px 12px; border-radius: 8px; color: oklch(0.556 0 0); text-decoration: none; white-space: nowrap; transition: color 150ms; } .ds-nav-link:hover { color: oklch(0.145 0 0); } .ds-nav-link:focus-visible { outline: none; box-shadow: 0 0 0 3px oklch(0.708 0 0 / 0.5); } .ds-nav-active { background: oklch(0.97 0 0); color: oklch(0.145 0 0); font-weight: 500; }"
+    },
+    {
+      "name": "Status Badges",
+      "kind": "chip",
+      "refersTo": "badge-status",
+      "description": "Event lifecycle carried by weight, not hue.",
+      "html": "<div class=\"ds-badges\"><span class=\"ds-badge ds-badge-outline\">Agendado</span><span class=\"ds-badge ds-badge-secondary\">Fotografado</span><span class=\"ds-badge ds-badge-default\">Publicado na Banlek</span><span class=\"ds-badge ds-badge-ghost\">Fechado</span></div>",
+      "css": ".ds-badges { display: flex; gap: 8px; flex-wrap: wrap; } .ds-badge { display: inline-flex; align-items: center; height: 20px; padding: 2px 8px; border-radius: 26px; border: 1px solid transparent; font: 500 12px/1 Geist, ui-sans-serif, system-ui, sans-serif; white-space: nowrap; } .ds-badge-outline { border-color: oklch(0.922 0 0); color: oklch(0.145 0 0); } .ds-badge-secondary { background: oklch(0.97 0 0); color: oklch(0.205 0 0); } .ds-badge-default { background: oklch(0.205 0 0); color: oklch(0.985 0 0); } .ds-badge-ghost { color: oklch(0.145 0 0); }"
+    },
+    {
+      "name": "Indicator",
+      "kind": "card",
+      "refersTo": "indicator",
+      "description": "Money figure card on the painel; negative values turn Loss Red, saldo gets a Wash fill.",
+      "html": "<div class=\"ds-indicators\"><div class=\"ds-indicator\"><p class=\"ds-ind-label\">Faturamento</p><p class=\"ds-ind-value\">R$ 18.420,00</p><p class=\"ds-ind-detail\">Últimos 6 meses</p></div><div class=\"ds-indicator\"><p class=\"ds-ind-label\">Resultado</p><p class=\"ds-ind-value ds-neg\">-R$ 1.230,50</p></div><div class=\"ds-indicator ds-ind-highlight\"><p class=\"ds-ind-label\">Saldo de caixa</p><p class=\"ds-ind-value\">R$ 9.870,00</p></div></div>",
+      "css": ".ds-indicators { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-indicator { border: 1px solid oklch(0.922 0 0); border-radius: 14px; padding: 16px; background: oklch(1 0 0); } .ds-ind-highlight { background: oklch(0.97 0 0 / 0.5); } .ds-ind-label { margin: 0; font-size: 14px; color: oklch(0.556 0 0); } .ds-ind-value { margin: 4px 0 0; font-size: 24px; font-weight: 600; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: oklch(0.145 0 0); } .ds-ind-value.ds-neg { color: oklch(0.577 0.245 27.325); } .ds-ind-detail { margin: 4px 0 0; font-size: 12px; color: oklch(0.556 0 0); }"
+    },
+    {
+      "name": "Section",
+      "kind": "card",
+      "refersTo": "section",
+      "description": "Flat bordered container with a semibold title.",
+      "html": "<section class=\"ds-section\"><h2>Próximos eventos</h2><ul><li><strong>Open Box Leblon</strong><span>14/12/2026 · Leblon</span></li><li><strong>Copa Niterói</strong><span>21/12/2026 · Icaraí</span></li></ul></section>",
+      "css": ".ds-section { border: 1px solid oklch(0.922 0 0); border-radius: 14px; padding: 24px; background: oklch(1 0 0); font: 400 14px/1.43 Geist, ui-sans-serif, system-ui, sans-serif; color: oklch(0.145 0 0); max-width: 360px; } .ds-section h2 { margin: 0 0 16px; font-size: 16px; font-weight: 600; } .ds-section ul { list-style: none; margin: 0; padding: 0; } .ds-section li { display: grid; padding: 10px 0; border-top: 1px solid oklch(0.922 0 0); } .ds-section li:first-child { border-top: 0; } .ds-section strong { font-weight: 500; } .ds-section span { color: oklch(0.556 0 0); font-variant-numeric: tabular-nums; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Event Ledger",
+    "overview": "RCF Gestão is a plain, trustworthy ledger. The interface exists to put a number in front of a sócio and make clear where it came from, so the chrome is nearly invisible: white paper, near-black ink, hairline borders and a single grayscale family of surfaces. Nothing competes with the figures. The density is moderate. Tables, lists and indicator cards sit in a single 64rem column that reads comfortably on a laptop and collapses cleanly to one phone-width column for cost entry in the field.\n\nColor is reserved for meaning. The logo's vivid blue, orange and magenta stay in the logo. Inside the app, blue means money coming in, orange means money going out, and red means a loss or an error. A screen with no money on it is grayscale.\n\nThe system is built on shadcn/ui (Base UI primitives, Tailwind 4) and stays close to its defaults on purpose: patterns the team already knows from every other web app, applied consistently. Brand lives in the precision of the numbers, not in decoration.",
+    "keyCharacteristics": [
+      "Grayscale chrome. Color only on data and on negative results.",
+      "Figures in tabular numerals, right-aligned in tables, and formatted as BRL (`R$ 1.234,56`).",
+      "Bordered, flat containers with no resting shadows.",
+      "One centered column (max 64rem) with a sticky-free top bar that scrolls horizontally on small screens.",
+      "Light theme ships today. Dark tokens exist and must be kept correct, because dark mode is planned."
+    ],
+    "rules": [
+      { "name": "The Color Means Money Rule", "body": "Hue appears only on financial data (blue in, orange out, red loss) and on errors. Chrome, navigation, buttons and status never borrow the data hues or the logo's colors.", "section": "colors" },
+      { "name": "The Red Is Loss Rule", "body": "A negative number is always rendered in Loss Red, whether in a table, an indicator or a chart. Red is never used for emphasis or decoration.", "section": "colors" },
+      { "name": "The Two Themes Rule", "body": "Every color added to `:root` gets a counterpart in `.dark` in the same change. Never hard-code a color that only works on white.", "section": "colors" },
+      { "name": "The Tabular Figures Rule", "body": "Every money value, date and count uses `tabular-nums`, and money columns are right-aligned, so figures line up and can be compared at a glance.", "section": "typography" },
+      { "name": "The Small Voice Rule", "body": "Nothing is larger than 1.5rem. Importance comes from weight and position, not size.", "section": "typography" },
+      { "name": "The Hairline Rule", "body": "Separate with a border, not a shadow. A container at rest never casts a shadow; only things that float above the page do.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** format money with `Intl.NumberFormat(\"pt-BR\", { currency: \"BRL\" })` and set it in `tabular-nums`, right-aligned in tables.",
+      "**Do** render negative values in Loss Red everywhere they appear.",
+      "**Do** build containers from a hairline border and the 14px radius, and leave them flat.",
+      "**Do** keep the 64rem single column, and hide secondary table columns below `sm` rather than scrolling tables sideways.",
+      "**Do** add a `.dark` value whenever you add a `:root` token, and validate new chart hues against both backgrounds.",
+      "**Do** reuse `CabecalhoPagina`, `Secao`, `Indicador`, `Vazio`, `StatusEvento` and `FormAcao` before you create a new pattern."
+    ],
+    "donts": [
+      "**Don't** bring the logo's blue, orange or magenta into buttons, nav, badges or backgrounds. Color means money.",
+      "**Don't** add resting shadows, gradients or decorative fills to cards or sections.",
+      "**Don't** set type above 1.5rem or introduce a second typeface.",
+      "**Don't** use red for anything except losses, errors and destructive actions.",
+      "**Don't** hard-code a hex color in a component, except chart series that are validated and commented in `graficos.tsx`."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+ "_comentario": "Exemplo do formato. Copie para mapeamento.json com os nomes reais (esse arquivo não vai para o repositório público).",
+ "locais": {
+  "BOX AURORA": "Box Aurora",
+  "CF MONTE VERDE": "CF Monte Verde"
+ },
+ "locais_por_endereco": {
+  "ARENA LAGOA TRAINING LTDA": "Arena Lagoa Training"
+ },
+ "titulo_e_evento": [
+  "DIA DOS NAMORADOS"
+ ],
+ "responsavel_por_uf": {
+  "MG": "Marina Costa",
+  "RJ": "Rafael Lima"
+ },
+ "pessoas_por_id_banlek": {
+  "1000001": "Marina Costa"
+ },
+ "prefixos_compostos": [
+  "REDE AURORA"
+ ]
+}
